@@ -14,12 +14,51 @@ const subjectsPerDay = {
         { time: "12:05-1:00", subject: "DAP" },
         { time: "2:00-4:45", subject: "Project presentation" },
     ],
+    day2: [
+        { time: "9:00-9:55", subject: "NoSQL" },
+        { time: "9:55-10:50", subject: "IoT" },
+        { time: "11:10-12:05", subject: "Societal presentation(AK)" },
+        { time: "12:05-1:00", subject: "DAP" },
+        { time: "2:00-4:45", subject: "Project presentation" },
+    ],
+    day3: [
+        { time: "9:00-9:55", subject: "NoSQL" },
+        { time: "9:55-10:50", subject: "IoT" },
+        { time: "11:10-12:05", subject: "Societal presentation(AK)" },
+        { time: "12:05-1:00", subject: "DAP" },
+        { time: "2:00-4:45", subject: "Project presentation" },
+    ],
+    day4: [
+        { time: "9:00-9:55", subject: "NoSQL" },
+        { time: "9:55-10:50", subject: "IoT" },
+        { time: "11:10-12:05", subject: "Societal presentation(AK)" },
+        { time: "12:05-1:00", subject: "DAP" },
+        { time: "2:00-4:45", subject: "Project presentation" },
+    ],
+    day5: [
+        { time: "9:00-9:55", subject: "NoSQL" },
+        { time: "9:55-10:50", subject: "IoT" },
+        { time: "11:10-12:05", subject: "Societal presentation(AK)" },
+        { time: "12:05-1:00", subject: "DAP" },
+        { time: "2:00-4:45", subject: "Project presentation" },
+    ],
+    day6: [
+        { time: "9:00-9:55", subject: "NoSQL" },
+        { time: "9:55-10:50", subject: "IoT" },
+        { time: "11:10-12:05", subject: "Societal presentation(AK)" },
+        { time: "12:05-1:00", subject: "DAP" },
+        { time: "2:00-4:45", subject: "Project presentation" },
+    ],
     // Other days...
 };
 
 const datesToDaysMapping = {
-    day1: ["09-01-2024", "18-01-2024", "29-01-2024", "06-02-2024", "13-02-2024", "29-08-2024"],
-    // Other dates...
+    day1: ["29-08-2024"],
+    day2: ["30-08-2024"],
+    day3: ["31-08-2024"],
+    day4: ["01-09-2024"],
+    day5: ["02-09-2024"],
+    day6: ["03-09-2024"],
 };
 
 const holidays = {
