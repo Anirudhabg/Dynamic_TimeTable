@@ -8,46 +8,46 @@ const timeDay = document.querySelector(".timeDay");
 // Timetable Data
 const subjectsPerDay = {
     day1: [
-        { time: "9:00-9:55", subject: "NoSQL" },
-        { time: "9:55-10:50", subject: "IoT" },
-        { time: "11:10-12:05", subject: "Societal presentation(AK)" },
-        { time: "12:05-1:00", subject: "DAP" },
-        { time: "2:00-4:45", subject: "Project presentation" },
+        { time: "9:00-9:55", subject: "22MCA24 - Web Technologies" },
+        { time: "9:55-10:50", subject: "22MCA252 - Data Mining and Business Intelligence" },
+        { time: "11:10-12:05", subject: "22MCA22 - Object Oriented Programming Using Java" },
+        { time: "12:05-1:00", subject: "22MCA21 - Database Management System" },
+        { time: "2:00-4:45", subject: "22MCA29 - Seminar" },
     ],
     day2: [
-        { time: "9:00-9:55", subject: "NoSQL" },
-        { time: "9:55-10:50", subject: "IoT" },
-        { time: "11:10-12:05", subject: "Societal presentation(AK)" },
-        { time: "12:05-1:00", subject: "DAP" },
-        { time: "2:00-4:45", subject: "Project presentation" },
+        { time: "9:00-9:55", subject: "22MCA22 - Object Oriented Programming Using Java" },
+        { time: "9:55-10:50", subject: "22MCA252 - Data Mining and Business Intelligence" },
+        { time: "11:10-12:05", subject: "22MCA23 - Software Engineering" },
+        { time: "12:05-1:00", subject: "22MCA24 - Web Technologies" },
+        { time: "2:00-4:45", subject: "22MCAL27 - DBMS Laboratory/22MCAL28 - Java Programming Laboratory" },
     ],
     day3: [
-        { time: "9:00-9:55", subject: "NoSQL" },
-        { time: "9:55-10:50", subject: "IoT" },
-        { time: "11:10-12:05", subject: "Societal presentation(AK)" },
-        { time: "12:05-1:00", subject: "DAP" },
-        { time: "2:00-4:45", subject: "Project presentation" },
+        { time: "9:00-9:55", subject: "22MCA23 - Software Engineering" },
+        { time: "9:55-10:50", subject: "22MCA21 - Database Management System" },
+        { time: "11:10-12:05", subject: "22MCA263 - Mobile Application Development" },
+        { time: "12:05-1:00", subject: "22MCA22 - Object Oriented Programming Using Java" },
+        { time: "2:00-3:50", subject: "22MCA24 - Web Technologies Laboratory" },
     ],
     day4: [
-        { time: "9:00-9:55", subject: "NoSQL" },
-        { time: "9:55-10:50", subject: "IoT" },
-        { time: "11:10-12:05", subject: "Societal presentation(AK)" },
-        { time: "12:05-1:00", subject: "DAP" },
-        { time: "2:00-4:45", subject: "Project presentation" },
+        { time: "9:00-9:55", subject: "22MCA21 - Database Management System" },
+        { time: "9:55-10:50", subject: "22MCA24 - Web Technologies" },
+        { time: "11:10-12:05", subject: "22MCA263 - Mobile Application Development" },
+        { time: "12:05-1:00", subject: "22MCA23 - Software Engineering" },
+        { time: "2:00-4:45", subject: "22MCAL27 - DBMS Laboratory/22MCAL28 - Java Programming Laboratory" },
     ],
     day5: [
-        { time: "9:00-9:55", subject: "NoSQL" },
-        { time: "9:55-10:50", subject: "IoT" },
-        { time: "11:10-12:05", subject: "Societal presentation(AK)" },
-        { time: "12:05-1:00", subject: "DAP" },
-        { time: "2:00-4:45", subject: "Project presentation" },
+        { time: "9:00-9:55", subject: "22MCA252 - Data Mining and Business Intelligence" },
+        { time: "9:55-10:50", subject: "22MCA23 - Software Engineering" },
+        { time: "11:10-12:05", subject: "22MCA22 - Object Oriented Programming Using Java" },
+        { time: "12:05-1:00", subject: "22MCA263 - Mobile Application Development" },
+        { time: "2:00-4:45", subject: "Placement Training" },
     ],
     day6: [
-        { time: "9:00-9:55", subject: "NoSQL" },
-        { time: "9:55-10:50", subject: "IoT" },
-        { time: "11:10-12:05", subject: "Societal presentation(AK)" },
-        { time: "12:05-1:00", subject: "DAP" },
-        { time: "2:00-4:45", subject: "Project presentation" },
+        { time: "9:00-9:55", subject: "22MCA263 - Mobile Application Development" },
+        { time: "9:55-10:50", subject: "22MCA252 - Data Mining and Business Intelligence" },
+        { time: "11:10-12:05", subject: "22MCA23 - Software Engineering" },
+        { time: "12:05-1:00", subject: "22MCA21 - Database Management System" },
+        { time: "2:00-4:45", subject: "Association Activity" },
     ],
     // Other days...
 };
@@ -78,9 +78,32 @@ function getDayOfWeek(date) {
     return days[date.getDay()];
 }
 
+function isFirstOrThirdSaturday(date) {
+    const day = date.getDay();
+    const dateOfMonth = date.getDate();
+
+    if (day === 6) {
+        if (dateOfMonth >= 1 && dateOfMonth <= 7) {
+            return true;
+        }
+        if (dateOfMonth >= 15 && dateOfMonth <= 21) {
+            return true;
+        }
+    }
+    return false;
+}
+
 function isHoliday(date) {
     const formattedDate = formatDate(date);
-    return holidays[formattedDate] || getDayOfWeek(date) === "Saturday" || getDayOfWeek(date) === "Sunday";
+    if (holidays[formattedDate]) {
+        return holidays[formattedDate];
+    }
+
+    if (getDayOfWeek(date) === "Sunday" || isFirstOrThirdSaturday(date)) {
+        return "Holiday";
+    }
+
+    return null;
 }
 
 function getDayFromDate(date) {
