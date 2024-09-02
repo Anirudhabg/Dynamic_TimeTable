@@ -53,19 +53,16 @@ const subjectsPerDay = {
 };
 
 const datesToDaysMapping = {
-    day1: ["29-08-2024"],
-    day2: ["30-08-2024"],
-    day3: ["31-08-2024"],
-    day4: ["01-09-2024"],
-    day5: ["02-09-2024"],
-    day6: ["03-09-2024"],
+    day1: ["02-09-2024"],
+    day2: ["03-09-2024"],
+    day3: ["04-09-2024"],
+    day4: ["05-09-2024"],
+    day5: ["06-09-2024"],
+    day6: ["09-09-2024"],
 };
 
 const holidays = {
-    "26-01-2024": "Republic Day",
-    "08-03-2024": "Mahashivaratri",
-    "29-03-2024": "Good Friday",
-    "09-04-2024": "Chandrama Ugadi",
+    "07-09-2024": "Ganesh Chaturthi",
 };
 
 // Utility Functions
