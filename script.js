@@ -53,16 +53,18 @@ const subjectsPerDay = {
 };
 
 const datesToDaysMapping = {
-    day1: ["02-09-2024","10-09-2024"],
-    day2: ["03-09-2024","11-09-2024"],
-    day3: ["04-09-2024","12-09-2024"],
-    day4: ["05-09-2024","13-09-2024"],
-    day5: ["06-09-2024","14-09-2024"],
-    day6: ["09-09-2024","17-09-2024"],
+    day1: ["02-09-2024", "10-09-2024", "18-09-2024", "25-09-2024"],
+    day2: ["03-09-2024", "11-09-2024", "19-09-2024", "26-09-2024"],
+    day3: ["04-09-2024", "12-09-2024", "20-09-2024", "27-09-2024"],
+    day4: ["05-09-2024", "13-09-2024", "21-09-2024", "28-09-2024"],
+    day5: ["06-09-2024", "14-09-2024", "23-09-2024", "30-09-2024"],
+    day6: ["09-09-2024", "17-09-2024", "24-09-2024", "01-10-2024"],
 };
 
 const holidays = {
     "07-09-2024": "Ganesh Chaturthi",
+    "16-09-2024": "Eid Milad and Workshop for Faculties",
+
 };
 
 // Utility Functions
@@ -83,9 +85,9 @@ function isFirstOrThirdSaturday(date) {
         if (dateOfMonth >= 1 && dateOfMonth <= 7) {
             return true;
         }
-        if (dateOfMonth >= 15 && dateOfMonth <= 21) {
-            return true;
-        }
+        // if (dateOfMonth >= 15 && dateOfMonth <= 21) {
+        //     return true;
+        // }
     }
     return false;
 }
