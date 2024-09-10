@@ -63,10 +63,11 @@ const datesToDaysMapping = {
 
 const holidays = {
     "07-09-2024": "Ganesh Chaturthi",
-    "16-09-2024": "Eid Milad and Workshop for Faculties",
-
 };
-
+const specialEvents = {
+    "11-09-2024": "Drishti Conference",
+    "16-09-2024": "Eid Milad and Workshop for Faculties",
+}
 // Utility Functions
 function formatDate(date) {
     return date.toLocaleDateString("en-GB").replace(/\//g, '-');
@@ -115,14 +116,30 @@ function getDayFromDate(date) {
     return null;
 }
 
+function getSpecialEvent(date) {
+    const formattedDate = formatDate(date);
+    if (specialEvents[formattedDate]) {
+        return specialEvents[formattedDate];
+    }
+    return null;
+}
+
 function displayTimetable(date) {
     const formattedDate = formatDate(date);
     currentDateElement.innerText = `Date: ${formattedDate}`;
     currentDay.innerText = getDayOfWeek(date);
 
     const holiday = isHoliday(date);
+    const specialEvent = getSpecialEvent(date);
+
     if (holiday) {
         timetableContainer.textContent = `Holiday: ${holiday}`;
+        timeDay.style.display = 'none';
+        return;
+    }
+
+    if (specialEvent) {
+        timetableContainer.innerText = `Special Event: ${specialEvent}`;
         timeDay.style.display = 'none';
         return;
     }
