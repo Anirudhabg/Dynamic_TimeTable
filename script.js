@@ -63,6 +63,7 @@ const datesToDaysMapping = {
 
 const holidays = {
     "07-09-2024": "Ganesh Chaturthi",
+    "02-10-2024": "Gandhi Jayanthi",
     "11-10-2024": "Ayudha Pooje",
     "12-10-2024": "Vijayadashami",
     "17-10-2024": "Valmiki Jayanthi",
