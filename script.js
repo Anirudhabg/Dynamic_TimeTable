@@ -4,6 +4,7 @@ const currentDay = document.getElementById("currentDay");
 const timetableContainer = document.getElementById("timetableContainer");
 const timeTableDay = document.getElementById("timeTableDay");
 const timeDay = document.querySelector(".timeDay");
+const dateInput = document.getElementById("dateInput");
 
 // Timetable Data
 const subjectsPerDay = {
@@ -75,6 +76,7 @@ const specialEvents = {
     "06-10-2024": "Additional Classes for 5th Semester Students",
     "10-10-2024": "Sri Ganahoma, Sri Sharadha Pooje and Ayudha Pooje @ VCET"
 }
+
 // Utility Functions
 function formatDate(date) {
     return date.toLocaleDateString("en-GB").replace(/\//g, '-');
@@ -93,9 +95,9 @@ function isFirstOrThirdSaturday(date) {
         if (dateOfMonth >= 1 && dateOfMonth <= 7) {
             return true;
         }
-        // if (dateOfMonth >= 15 && dateOfMonth <= 21) {
-        //     return true;
-        // }
+        if (dateOfMonth >= 15 && dateOfMonth <= 21) {
+            return true;
+        }
     }
     return false;
 }
@@ -173,13 +175,22 @@ function displayTimetable(date) {
         });
         timetableContainer.appendChild(table);
     } else {
-        timetableContainer.textContent = "No timetable for today.";
+        timetableContainer.textContent = `There is currently no timetable assigned for ${formattedDate}.`;
     }
 }
 
-// Initialize
+// Event listener for date change
+dateInput.addEventListener("change", (event) => {
+    const selectedDate = new Date(event.target.value);
+    if (!isNaN(selectedDate)) {
+        displayTimetable(selectedDate);
+    }
+});
+
+// Initialize with today's date
 function init() {
     const today = new Date();
+    dateInput.valueAsDate = today;
     displayTimetable(today);
 }
 

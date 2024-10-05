@@ -35,6 +35,28 @@ section {
     color: #333;
 }
 
+/* Date Picker Styling */
+.datePicker {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.datePicker input[type="date"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.datePicker input[type="date"]:focus {
+    border-color: #007BFF;
+}
 /* Date and Day Display */
 .dateText {
     text-align: center;
