@@ -142,15 +142,16 @@ function displayTimetable(date) {
     const specialEvent = getSpecialEvent(date);
 
     if (holiday) {
-        timetableContainer.textContent = `Holiday: ${holiday}`;
+        const eventMessage = specialEvent ? `<br>Special Event: ${specialEvent}` : '';
+        timetableContainer.innerHTML = `Holiday: ${holiday}` + eventMessage;
         timeDay.style.display = 'none';
         return;
     }
 
+    // Display the special event if there is one
     if (specialEvent) {
-        timetableContainer.innerText = `Special Event: ${specialEvent}`;
-        timeDay.style.display = 'none';
-        return;
+        const eventMessage = `Special Event: ${specialEvent}`;
+        timetableContainer.innerHTML += `<p>${eventMessage}</p>`;
     }
 
     timeDay.style.display = 'block';
