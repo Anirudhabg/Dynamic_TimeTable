@@ -74,9 +74,25 @@ const specialEvents = {
     "16-09-2024": "Eid Milad and Workshop for Faculties",
     "05-10-2024": "Additional Day 3 for 5th and 7th Semester Students",
     "06-10-2024": "Additional Classes for 5th Semester Students",
-    "10-10-2024": "Sri Ganahoma, Sri Sharadha Pooje and Ayudha Pooje @ VCET"
+    "10-10-2024": "Sri Ganahoma, Sri Sharadha Pooje and Ayudha Pooje @ VCET",
+    "19-10-2024": "Last Working Day for 2nd Year P G Students",
+    "20-10-2024": "Additional Classes for 5th Semester Students",
 }
 
+const theoryExamDates = {
+    "14-10-2024":{
+        "9:30 - 11:00 AM": "22MCA21 - Database Management System",
+        "3:00 - 4:30 PM": "22MCA22 - Object Oriented Programming Using Java"
+    },
+    "15-10-2024":{
+        "9:30 - 11:00 AM": "22MCA23 - Software Engineering",
+        "3:00 - 4:30 PM": "22MCA252 - Data Mining and Business Intelligence"
+    },
+    "16-10-2024":{
+        "9:30 - 11:00 AM": "22MCA263 - Mobile Application Development",
+        "2:00 - 4:00 PM": "22MCA24 - Web Technologies"
+    },
+}
 // Utility Functions
 function formatDate(date) {
     return date.toLocaleDateString("en-GB").replace(/\//g, '-');
@@ -95,9 +111,9 @@ function isFirstOrThirdSaturday(date) {
         if (dateOfMonth >= 1 && dateOfMonth <= 7) {
             return true;
         }
-        if (dateOfMonth >= 15 && dateOfMonth <= 21) {
-            return true;
-        }
+        // if (dateOfMonth >= 15 && dateOfMonth <= 21) {
+        //     return true;
+        // }
     }
     return false;
 }
@@ -133,6 +149,14 @@ function getSpecialEvent(date) {
     return null;
 }
 
+function getTheoryExamDate(date){
+    const formattedDate = formatDate(date);
+    if(theoryExamDates[formattedDate]){
+        return theoryExamDates[formattedDate];
+    }
+    return null;
+}
+
 function displayTimetable(date) {
     const formattedDate = formatDate(date);
     currentDateElement.innerText = `Date: ${formattedDate}`;
@@ -140,6 +164,7 @@ function displayTimetable(date) {
 
     const holiday = isHoliday(date);
     const specialEvent = getSpecialEvent(date);
+    const theoryExamDate = getTheoryExamDate(date);
 
     if (holiday) {
         const eventMessage = specialEvent ? `<br>Special Event: ${specialEvent}` : '';
@@ -154,11 +179,34 @@ function displayTimetable(date) {
         timetableContainer.innerHTML += `<p>${eventMessage}</p>`;
     }
 
+    if (theoryExamDate) {
+        
+        const h3 = document.createElement("h3");
+        h3.innerHTML = `Continuous Internal Evaluation (CIE)`;
+        h3.style.textAlign = 'center';
+        const table = document.createElement("table");
+        table.innerHTML = `
+        <tr>
+            <th>Time</th>
+            <th>Subject</th>
+        </tr>
+        `;
+        for (const [time, subject] of Object.entries(theoryExamDate)) {
+            const row = table.insertRow();
+            row.insertCell(0).textContent = time;
+            row.insertCell(1).textContent = subject;
+        }
+        timetableContainer.innerHTML = "";
+        timetableContainer.appendChild(h3)
+        timetableContainer.appendChild(table);
+        return;
+    }
+
     timeDay.style.display = 'block';
     const dayKey = getDayFromDate(date);
     const timetable = subjectsPerDay[dayKey];
 
-    timeTableDay.innerText = dayKey ? dayKey : "No Timetable";
+    timeTableDay.innerText = dayKey ? `Time Table: ${dayKey}` : "";
     timetableContainer.innerHTML = "";
 
     if (timetable) {
