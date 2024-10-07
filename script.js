@@ -80,15 +80,15 @@ const specialEvents = {
 }
 
 const theoryExamDates = {
-    "14-10-2024":{
+    "14-10-2024": {
         "9:30 - 11:00 AM": "22MCA21 - Database Management System",
         "3:00 - 4:30 PM": "22MCA22 - Object Oriented Programming Using Java"
     },
-    "15-10-2024":{
+    "15-10-2024": {
         "9:30 - 11:00 AM": "22MCA23 - Software Engineering",
         "3:00 - 4:30 PM": "22MCA252 - Data Mining and Business Intelligence"
     },
-    "16-10-2024":{
+    "16-10-2024": {
         "9:30 - 11:00 AM": "22MCA263 - Mobile Application Development",
         "2:00 - 4:00 PM": "22MCA24 - Web Technologies"
     },
@@ -149,9 +149,9 @@ function getSpecialEvent(date) {
     return null;
 }
 
-function getTheoryExamDate(date){
+function getTheoryExamDate(date) {
     const formattedDate = formatDate(date);
-    if(theoryExamDates[formattedDate]){
+    if (theoryExamDates[formattedDate]) {
         return theoryExamDates[formattedDate];
     }
     return null;
@@ -180,7 +180,10 @@ function displayTimetable(date) {
     }
 
     if (theoryExamDate) {
-        
+        timeDay.style.display = 'block';
+        const dayKey = getDayFromDate(date);
+        const timetable = subjectsPerDay[dayKey];
+        timeTableDay.innerText = dayKey ? `Time Table: ${dayKey}` : "";
         const h3 = document.createElement("h3");
         h3.innerHTML = `Continuous Internal Evaluation (CIE)`;
         h3.style.textAlign = 'center';
