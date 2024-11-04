@@ -103,6 +103,9 @@ const theoryExamDates = {
 const seeExamDates = {
     "29-10-2024": {
         "2:00 - 5:00 PM": "22MCA21 - Database Management System"
+    },
+    "04-11-2024":{
+        "2:00 - 5:00 PM": "22MCA22 - Object Oriented Programming Using Java"
     }
 }
 // Utility Functions
