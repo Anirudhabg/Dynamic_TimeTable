@@ -54,35 +54,22 @@ const subjectsPerDay = {
 };
 
 const datesToDaysMapping = {
-    day1: ["02-09-2024", "10-09-2024", "18-09-2024", "25-09-2024", "03-10-2024", "14-10-2024", "22-10-2024", "29-10-2024", "08-11-2024", "15-11-2024"],
-    day2: ["03-09-2024", "11-09-2024", "19-09-2024", "26-09-2024", "04-10-2024", "15-10-2024", "23-10-2024", "30-10-2024", "09-11-2024", "19-11-2024"],
-    day3: ["04-09-2024", "12-09-2024", "20-09-2024", "27-09-2024", "07-10-2024", "16-10-2024", "24-10-2024", "04-11-2024", "11-11-2024", "20-11-2024"],
-    day4: ["05-09-2024", "13-09-2024", "21-09-2024", "28-09-2024", "08-10-2024", "18-10-2024", "25-10-2024", "05-11-2024", "12-11-2024", "21-11-2024"],
-    day5: ["06-09-2024", "14-09-2024", "23-09-2024", "30-09-2024", "09-10-2024", "19-10-2024", "26-10-2024", "06-11-2024", "13-11-2024", "22-11-2024"],
-    day6: ["09-09-2024", "17-09-2024", "24-09-2024", "01-10-2024", "10-10-2024", "21-10-2024", "28-10-2024", "07-11-2024", "14-11-2024", "23-11-2024"],
+    day1: ["12-12-2024","19-12-2024","28-12-2024"],
+    day2: ["13-12-2024","20-12-2024","30-12-2024"],
+    day3: ["14-12-2024","23-12-2024","31-12-2024"],
+    day4: ["16-12-2024","24-12-2024","01-01-2025"],
+    day5: ["17-12-2024","26-12-2024","02-01-2025"],
+    day6: ["18-12-2024","27-12-2024","03-01-2025"],
 };
 
 const holidays = {
-    "07-09-2024": "Ganesh Chaturthi",
-    "02-10-2024": "Gandhi Jayanthi",
-    "11-10-2024": "Ayudha Pooje",
-    "12-10-2024": "Vijayadashami",
-    "17-10-2024": "Valmiki Jayanthi",
-    "31-10-2024": "Naraka Chaturdashi",
-    "01-11-2024": "Kannada Rajyothsava",
-    "02-11-2024": "Balipadyami",
-    "18-11-2024": "Kanakadasa Jayanthi"
+    "22-12-2024":"National Mathematics Day",
+    "25-12-2024": "Christmas",
 };
 const specialEvents = {
-    "11-09-2024": "Drishti Conference",
-    "16-09-2024": "Eid Milad and Workshop for Faculties",
-    "05-10-2024": "Additional Day 3 for 5th and 7th Semester Students",
-    "06-10-2024": "Additional Classes for 5th Semester Students",
-    "10-10-2024": "Sri Ganahoma, Sri Sharadha Pooje and Ayudha Pooje @ VCET",
-    "19-10-2024": "Last Working Day for 2nd Year P G Students",
-    "20-10-2024": "Additional Classes for 5th Semester Students",
-    "10-11-2024": "Additional Classes for 5th Semester Students",
-    "24-11-2024": "Additional Classes for 5th Semester Students"
+    "14-12-2024": "Inauguration of Savarkar Sabhabhavana",
+    "16-12-2024": "Commencement of Classes for 1st Year MBA & MCA",
+    "06-01-2025": "Commencement of Classes for 2nd Year MBA & MCA",
 }
 
 const theoryExamDates = {
