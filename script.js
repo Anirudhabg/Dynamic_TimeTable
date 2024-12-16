@@ -6,8 +6,55 @@ const timeTableDay = document.getElementById("timeTableDay");
 const timeDay = document.querySelector(".timeDay");
 const dateInput = document.getElementById("dateInput");
 
+let selectedSemester = 'firstSem'; // Default to first semester
+
 // Timetable Data
-const subjectsPerDay = {
+const subjectsPerDayFirstSem = {
+    day1: [
+        { time: "9:00-9:55", subject: "MMC105 - Web Technologies (JK)" },
+        { time: "9:55-10:50", subject: "MMC104 - Operating System (PL)" },
+        { time: "11:10-12:05", subject: "MMC102 - Discrete Mathematics and Graph Theory (AB)" },
+        { time: "12:05-1:00", subject: "MMC103 - Database Management System (RK)" },
+        { time: "2:00-4:45", subject: "MMCL106 - DBMS and Web Technologies Laboratory (NH + PL)(AB)" },
+    ],
+    day2: [
+        { time: "9:00-9:55", subject: "MMC101 - Object Oriented Programming Using Java" },
+        { time: "9:55-10:50", subject: "MMC101 - Data Mining and Business Intelligence" },
+        { time: "11:10-12:05", subject: "MMC101 - Software Engineering" },
+        { time: "12:05-1:00", subject: "MMC101 - Web Technologies" },
+        { time: "2:00-4:45", subject: "MMC101 - DBMS Laboratory/22MCAL28 - Java Programming Laboratory" },
+    ],
+    day3: [
+        { time: "9:00-9:55", subject: "MMC101 - Software Engineering" },
+        { time: "9:55-10:50", subject: "MMC101 - Database Management System" },
+        { time: "11:10-12:05", subject: "MMC101 - Mobile Application Development" },
+        { time: "12:05-1:00", subject: "MMC101 - Object Oriented Programming Using Java" },
+        { time: "2:00-3:50", subject: "MMC101 - Web Technologies Laboratory" },
+    ],
+    day4: [
+        { time: "9:00-9:55", subject: "MMC101 - Database Management System" },
+        { time: "9:55-10:50", subject: "MMC101 - Web Technologies" },
+        { time: "11:10-12:05", subject: "MMC101 - Mobile Application Development" },
+        { time: "12:05-1:00", subject: "MMC101 - Software Engineering" },
+        { time: "2:00-4:45", subject: "MMC101 - DBMS Laboratory/22MCAL28 - Java Programming Laboratory" },
+    ],
+    day5: [
+        { time: "9:00-9:55", subject: "22MCA252 - Data Mining and Business Intelligence" },
+        { time: "9:55-10:50", subject: "22MCA23 - Software Engineering" },
+        { time: "11:10-12:05", subject: "22MCA22 - Object Oriented Programming Using Java" },
+        { time: "12:05-1:00", subject: "22MCA263 - Mobile Application Development" },
+        { time: "2:00-4:45", subject: "Placement Training" },
+    ],
+    day6: [
+        { time: "9:00-9:55", subject: "22MCA263 - Mobile Application Development" },
+        { time: "9:55-10:50", subject: "22MCA252 - Data Mining and Business Intelligence" },
+        { time: "11:10-12:05", subject: "22MCA23 - Software Engineering" },
+        { time: "12:05-1:00", subject: "22MCA21 - Database Management System" },
+        { time: "2:00-4:45", subject: "Association Activity" },
+    ],
+};
+
+const subjectsPerDayThirdSem = {
     day1: [
         { time: "9:00-9:55", subject: "22MCA24 - Web Technologies" },
         { time: "9:55-10:50", subject: "22MCA252 - Data Mining and Business Intelligence" },
@@ -50,20 +97,19 @@ const subjectsPerDay = {
         { time: "12:05-1:00", subject: "22MCA21 - Database Management System" },
         { time: "2:00-4:45", subject: "Association Activity" },
     ],
-    // Other days...
 };
 
 const datesToDaysMapping = {
-    day1: ["12-12-2024","19-12-2024","28-12-2024"],
-    day2: ["13-12-2024","20-12-2024","30-12-2024"],
-    day3: ["14-12-2024","23-12-2024","31-12-2024"],
-    day4: ["16-12-2024","24-12-2024","01-01-2025"],
-    day5: ["17-12-2024","26-12-2024","02-01-2025"],
-    day6: ["18-12-2024","27-12-2024","03-01-2025"],
+    day1: ["12-12-2024", "19-12-2024", "28-12-2024"],
+    day2: ["13-12-2024", "20-12-2024", "30-12-2024"],
+    day3: ["14-12-2024", "23-12-2024", "31-12-2024"],
+    day4: ["16-12-2024", "24-12-2024", "01-01-2025"],
+    day5: ["17-12-2024", "26-12-2024", "02-01-2025"],
+    day6: ["18-12-2024", "27-12-2024", "03-01-2025"],
 };
 
 const holidays = {
-    "22-12-2024":"National Mathematics Day",
+    "22-12-2024": "National Mathematics Day",
     "25-12-2024": "Christmas",
 };
 const specialEvents = {
@@ -73,27 +119,11 @@ const specialEvents = {
 }
 
 const theoryExamDates = {
-    "14-10-2024": {
-        "9:30 - 11:00 AM": "22MCA21 - Database Management System",
-        "3:00 - 4:30 PM": "22MCA22 - Object Oriented Programming Using Java"
-    },
-    "15-10-2024": {
-        "9:30 - 11:00 AM": "22MCA23 - Software Engineering",
-        "3:00 - 4:30 PM": "22MCA252 - Data Mining and Business Intelligence"
-    },
-    "16-10-2024": {
-        "9:30 - 11:00 AM": "22MCA263 - Mobile Application Development",
-        "2:00 - 4:00 PM": "22MCA24 - Web Technologies"
-    },
+    // Add when Necessary
 }
 
 const seeExamDates = {
-    "29-10-2024": {
-        "2:00 - 5:00 PM": "22MCA21 - Database Management System"
-    },
-    "04-11-2024":{
-        "2:00 - 5:00 PM": "22MCA22 - Object Oriented Programming Using Java"
-    }
+    // Add when Necessary
 }
 // Utility Functions
 function formatDate(date) {
@@ -244,8 +274,7 @@ function displayTimetable(date) {
 
     timeDay.style.display = 'block';
     const dayKey = getDayFromDate(date);
-    const timetable = subjectsPerDay[dayKey];
-
+    const timetable = selectedSemester === 'firstSem' ? subjectsPerDayFirstSem[dayKey] : subjectsPerDayThirdSem[dayKey];
     timeTableDay.innerText = dayKey ? `Time Table: ${dayKey}` : "";
     timetableContainer.innerHTML = "";
 
@@ -267,6 +296,18 @@ function displayTimetable(date) {
         timetableContainer.textContent = `There is currently no timetable assigned for ${formattedDate}.`;
     }
 }
+
+document.getElementById("firstSemButton").addEventListener("click", () => {
+    selectedSemester = 'firstSem';
+    const selectedDate = new Date(dateInput.value);
+    displayTimetable(selectedDate);
+});
+
+document.getElementById("thirdSemButton").addEventListener("click", () => {
+    selectedSemester = 'thirdSem';
+    const selectedDate = new Date(dateInput.value);
+    displayTimetable(selectedDate);
+});
 
 // Event listener for date change
 dateInput.addEventListener("change", (event) => {
