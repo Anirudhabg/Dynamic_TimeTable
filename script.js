@@ -95,7 +95,7 @@ const subjectsPerDayThirdSem = {
 };
 
 const datesToDaysMapping = {
-    day1: ["06-03-2025"],
+    day1: ["06-03-2025","14-03-2025"],
     day2: ["07-03-2025"],
     day3: ["10-03-2025"],
     day4: ["11-03-2025"],
