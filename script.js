@@ -95,28 +95,30 @@ const subjectsPerDayThirdSem = {
 };
 
 const datesToDaysMapping = {
-    day1: ["06-03-2025","14-03-2025"],
-    day2: ["07-03-2025"],
-    day3: ["10-03-2025"],
-    day4: ["11-03-2025"],
-    day5: ["12-03-2025"],
-    day6: ["13-03-2025"],
+    day1: ["26-03-2025", "03-04-2025", "12-04-2025"],
+    day2: ["27-03-2025", "04-04-2025", "15-04-2025"],
+    day3: ["28-03-2025", "07-04-2025", "16-04-2025"],
+    day4: ["29-03-2025", "08-04-2025", "17-04-2025"],
+    day5: ["01-04-2025", "09-04-2025", "21-04-2025"],
+    day6: ["02-04-2025", "11-04-2025", "22-04-2025"],
 };
 
 const holidays = {
-    "22-12-2024": "National Mathematics Day",
-    "25-12-2024": "Christmas",
-    "14-01-2025": "Makara Sankranthi",
-    "26-01-2025": "Republic Day",
+    "30-03-2025": "Chandramana Ugadi",
+    "31-03-2025": "Qutub - e - Ramzan",
+    "10-04-2025": "Mahavir Jayanthi",
+    "14-04-2025": "Dr. Ambedkar Jayanthi",
+    "18-04-2025": "Good Friday",
 };
 const specialEvents = {
-    "14-12-2024": "Inauguration of Savarkar Sabhabhavana",
-    "16-12-2024": "Commencement of Classes for 1st Year MBA & MCA",
-    "06-01-2025": "Commencement of Classes for 2nd Year MBA & MCA",
-    "21-01-2025": "MCA - Freshers Day",
-    "06-02-2025": "IA Test 1 for 1st Semester MCA Students",
-    "07-02-2025": "IA Test 1 for 1st and 3rd Semester MCA Students",
-    "08-02-2025": "IA Test 1 for 1st and 3rd Semester MCA Students"
+    "25-03-2025": "IA Test 2 for 1st Semester MBA & MCA Students",
+    "26-03-2025": "IA Test 2 for 1st Semester MBA & MCA Students",
+    "27-03-2025": "IA Test 2 for 1st Semester MBA & MCA Students",
+    "28-03-2025": "Last Working day of 1st Semester MBA & MCA Students",
+    "29-03-2025": "PG 2024 Batch Graduation Day",
+    "16-04-2025": "IA Test 3 for 3rd Semester MCA Students",
+    "17-04-2025": "IA Test 3 for 3rd Semester MCA Students",
+    "21-04-2025": "Last Working day of 3rd Semester MBA & MCA Students",
 
 }
 
