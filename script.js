@@ -11,44 +11,44 @@ let selectedSemester = 'firstSem'; // Default to first semester
 // Timetable Data
 const subjectsPerDayFirstSem = {
     day1: [
-        { time: "9:00-9:55", subject: "MMC105 - Web Technologies (JK)" },
-        { time: "9:55-10:50", subject: "MMC104 - Operating System (PL)" },
-        { time: "11:10-12:05", subject: "MMC102 - Discrete Mathematics and Graph Theory (AB)" },
-        { time: "12:05-1:00", subject: "MMC103 - Database Management System (RK)" },
-        { time: "2:00-4:45", subject: "MMCL106 - DBMS and Web Technologies Laboratory (NH + PL)(AB)" },
+        { time: "9:00-9:55", subject: "MMC201 -  Machine Learning and Data Analytics Using Python (JK)" },
+        { time: "9:55-10:50", subject: "MMC202 - Object Oriented Programming Using Java (RK)" },
+        { time: "11:10-12:05", subject: "MMC203 - Data Structures and Algorithms (AB)" },
+        { time: "12:05-1:00", subject: "MMC204 - Software Engineering (PL)" },
+        { time: "2:00-4:45", subject: "MMC258x - Ability/Skill Enhancement Course (NH + AB)" },
     ],
     day2: [
-        { time: "9:00-9:55", subject: "MMC102 - Discrete Mathematics and Graph Theory (AB)" },
-        { time: "9:55-10:50", subject: "MMC104 - Operating System (PL)" },
-        { time: "11:10-12:05", subject: "MMC103 - Database Management System (RK)" },
-        { time: "12:05-1:00", subject: "MMC105 - Web Technologies (JK)" },
-        { time: "2:00-4:45", subject: "Placement (NH / AB)" },
+        { time: "9:00-9:55", subject: "MMC202 - Object Oriented Programming Using Java (RK)" },
+        { time: "9:55-10:50", subject: "MMC205 - Web Application Development (NH)" },
+        { time: "11:10-12:05", subject: "MMC204 - Software Engineering (PL) +" },
+        { time: "12:05-1:00", subject: "MMC201 -  Machine Learning and Data Analytics Using Python (JK)" },
+        { time: "2:00-4:45", subject: "MMCL206 - Object Oriented Programming using Java Laboratory (RK + PL) / MMCL207 - Data Structures and Algorithms Laboratory (AB + AK)" },
     ],
     day3: [
-        { time: "9:00-9:55", subject: "MMC101 - Programming and Problem Solving in C (RM)" },
-        { time: "9:55-10:50", subject: "MMC102 - Discrete Mathematics and Graph Theory (AB)" },
-        { time: "11:10-1:00", subject: "Placement (AB)" },
-        { time: "2:00-2:55", subject: "MMC104 - Operating System (PL)" },
+        { time: "9:00-9:55", subject: "MMC205 - Web Application Development (NH)" },
+        { time: "9:55-10:50", subject: "MMC202 - Object Oriented Programming Using Java (RK)" },
+        { time: "11:10-12:05", subject: "MMC201 -  Machine Learning and Data Analytics Using Python (JK)" },
+        { time: "12:05-1:00", subject: "MMC203 - Data Structures and Algorithms (AB)" },
+        { time: "2:00-4:45", subject: "MMCL206 - Object Oriented Programming using Java Laboratory (RK + PL) / MMCL207 - Data Structures and Algorithms Laboratory (AB + AK)" },
     ],
     day4: [
-        { time: "9:00-9:55", subject: "MMC104 - Operating System (PL)" },
-        { time: "9:55-10:50", subject: "MMC105 - Web Technologies (JK)" },
-        { time: "11:10-12:05", subject: "MMC102 - Discrete Mathematics and Graph Theory (AB)" },
-        { time: "12:05-1:00", subject: "MMC101 - Programming and Problem Solving in C (AK)" },
-        { time: "2:00-4:45", subject: "MMCL106 - DBMS and Web Technologies Laboratory (NH + PL)(JK + AB)" },
+        { time: "9:00-9:55", subject: "MMC203 - Data Structures and Algorithms (AB)" },
+        { time: "9:55-10:50", subject: "MMC202 - Object Oriented Programming Using Java (RK)" },
+        { time: "11:10-12:05", subject: "MMC205 - Web Application Development (NH) +" },
+        { time: "12:05-1:00", subject: "MMC201 -  Machine Learning and Data Analytics Using Python (JK)" },
+        { time: "2:00-4:45", subject: "Association Activity" },
     ],
     day5: [
-        { time: "9:00-9:55", subject: "MMC102 - Discrete Mathematics and Graph Theory (AB)" },
-        { time: "9:55-10:50", subject: "MMC103 - Database Management System (NH)" },
-        { time: "11:10-12:05", subject: "MMC101 - Programming and Problem Solving in C (AK)" },
-        { time: "12:05-1:00", subject: "MMC104 - Operating System (PL)" },
-        { time: "2:00-2:55", subject: "MMC101 - Programming and Problem Solving in C (RM)" },
+        { time: "9:00-9:55", subject: "MMC204 - Software Engineering (PL)" },
+        { time: "9:55-10:50", subject: "MMC203 - Data Structures and Algorithms (AB)" },
+        { time: "11:10-1:00", subject: "MMC201 -  Machine Learning and Data Analytics Using Python Lab (RM + RK, AK + JK)" },
+        { time: "2:00-4:45", subject: "Placement" },
     ],
     day6: [
-        { time: "9:00-10:50", subject: "MMC101 - Programming and Problem Solving in C Lab (AK + RM)" },
-        { time: "11:10-12:05", subject: "MMC105 - Web Technologies (JK)" },
-        { time: "12:05-1:00", subject: "MMC103 - Database Management System (NH)" },
-        { time: "2:00-4:45", subject: "Association Activity" },
+        { time: "9:00-9:55", subject: "MMC205 - Web Application Development (NH)" },
+        { time: "9:55-10:50", subject: "MMC204 - Software Engineering (PL)" },
+        { time: "11:10-1:00", subject: "Placement" },
+        { time: "2:00-2:55", subject: "MMC202 - Object Oriented Programming Using Java (RK)" },
     ],
 };
 
@@ -104,22 +104,13 @@ const datesToDaysMapping = {
 };
 
 const holidays = {
-    "30-03-2025": "Chandramana Ugadi",
-    "31-03-2025": "Qutub - e - Ramzan",
-    "10-04-2025": "Mahavir Jayanthi",
-    "14-04-2025": "Dr. Ambedkar Jayanthi",
-    "18-04-2025": "Good Friday",
+    "30-04-2025": "Holiday",
+    "01-05-2025": "Holiday",
+    "02-05-2025": "Holiday",
+    // Add when Necessary
 };
 const specialEvents = {
-    "25-03-2025": "IA Test 2 for 1st Semester MBA & MCA Students",
-    "26-03-2025": "IA Test 2 for 1st Semester MBA & MCA Students",
-    "27-03-2025": "IA Test 2 for 1st Semester MBA & MCA Students",
-    "28-03-2025": "Last Working day of 1st Semester MBA & MCA Students",
-    "29-03-2025": "PG 2024 Batch Graduation Day",
-    "16-04-2025": "IA Test 3 for 3rd Semester MCA Students",
-    "17-04-2025": "IA Test 3 for 3rd Semester MCA Students",
-    "21-04-2025": "Last Working day of 3rd Semester MBA & MCA Students",
-
+    // Add when Necessary
 }
 
 const theoryExamDates = {
