@@ -52,61 +52,58 @@ const subjectsPerDayFirstSem = {
     ],
 };
 
-const subjectsPerDayThirdSem = {
-    day1: [
-        { time: "9:00-9:55", subject: "22MCA31 - Data Analytics Using Python (RK)" },
-        { time: "9:55-10:50", subject: "22MCA335 - NoSQL (NH)" },
-        { time: "11:10-12:05", subject: "22MCA32 - Internet of Things (RM)" },
-        { time: "12:05-1:00", subject: "22MCA343 - Software Testing (AK)" },
-        { time: "2:00-4:45", subject: "Project Presentation (JK)" },
-    ],
-    day2: [
-        { time: "9:00-9:55", subject: "22MCA32 - Internet of Things (RM)" },
-        { time: "9:55-10:50", subject: "22MCA343 - Software Testing (AK)" },
-        { time: "11:10-12:05", subject: "22MCA335 - NoSQL (NH)" },
-        { time: "12:05-1:00", subject: "Placement (AB)" },
-        { time: "2:00-4:45", subject: "22MCAL36 - Data Analytics Lab with Mini Project (RK + AK) / 22MCAL37 IoT Lab with Mini Project (RM + PL)" },
-    ],
-    day3: [
-        { time: "9:00-9:55", subject: "22MCA343 - Software Testing (AK)" },
-        { time: "9:55-10:50", subject: "22MCA31 - Data Analytics Using Python (RK)" },
-        { time: "11:10-1:00", subject: "Societal Lab (JK + NH + PL)" },
-        { time: "2:00-3:50", subject: "22MCAL36 - Data Analytics Lab with Mini Project (RK + AK) / 22MCAL37 IoT Lab with Mini Project (RM + AB)" },
-    ],
-    day4: [
-        { time: "9:00-9:55", subject: "22MCA343 - Software Testing (AK)" },
-        { time: "9:55-10:50", subject: "22MCA32 - Internet of Things (RM)" },
-        { time: "11:10-12:05", subject: "22MCA335 - NoSQL (NH)" },
-        { time: "12:05-1:00", subject: "Societal Presentation" },
-        { time: "2:00-4:45", subject: "Internship Presentation (RK)" },
-    ],
-    day5: [
-        { time: "9:00-9:55", subject: "22MCA32 - Internet of Things (RM)" },
-        { time: "9:55-10:50", subject: "22MCA31 - Data Analytics Using Python (RK)" },
-        { time: "11:10-1:00", subject: "Placement Lab (NH + AB)" },
-        { time: "2:00-4:45", subject: "Project Lab (JK + PL + NH + AB)" },
-    ],
-    day6: [
-        { time: "9:00-9:55", subject: "22MCA335 - NoSQL (NH)" },
-        { time: "9:55-10:50", subject: "22MCA31 - Data Analytics Using Python (RK)" },
-        { time: "11:10-1:00", subject: "Mini Project (RK + AK) (RM + AB)" },
-        { time: "2:00-4:45", subject: "Association Activity" },
-    ],
-};
+// const subjectsPerDayThirdSem = {
+//     day1: [
+//         { time: "9:00-9:55", subject: "22MCA31 - Data Analytics Using Python (RK)" },
+//         { time: "9:55-10:50", subject: "22MCA335 - NoSQL (NH)" },
+//         { time: "11:10-12:05", subject: "22MCA32 - Internet of Things (RM)" },
+//         { time: "12:05-1:00", subject: "22MCA343 - Software Testing (AK)" },
+//         { time: "2:00-4:45", subject: "Project Presentation (JK)" },
+//     ],
+//     day2: [
+//         { time: "9:00-9:55", subject: "22MCA32 - Internet of Things (RM)" },
+//         { time: "9:55-10:50", subject: "22MCA343 - Software Testing (AK)" },
+//         { time: "11:10-12:05", subject: "22MCA335 - NoSQL (NH)" },
+//         { time: "12:05-1:00", subject: "Placement (AB)" },
+//         { time: "2:00-4:45", subject: "22MCAL36 - Data Analytics Lab with Mini Project (RK + AK) / 22MCAL37 IoT Lab with Mini Project (RM + PL)" },
+//     ],
+//     day3: [
+//         { time: "9:00-9:55", subject: "22MCA343 - Software Testing (AK)" },
+//         { time: "9:55-10:50", subject: "22MCA31 - Data Analytics Using Python (RK)" },
+//         { time: "11:10-1:00", subject: "Societal Lab (JK + NH + PL)" },
+//         { time: "2:00-3:50", subject: "22MCAL36 - Data Analytics Lab with Mini Project (RK + AK) / 22MCAL37 IoT Lab with Mini Project (RM + AB)" },
+//     ],
+//     day4: [
+//         { time: "9:00-9:55", subject: "22MCA343 - Software Testing (AK)" },
+//         { time: "9:55-10:50", subject: "22MCA32 - Internet of Things (RM)" },
+//         { time: "11:10-12:05", subject: "22MCA335 - NoSQL (NH)" },
+//         { time: "12:05-1:00", subject: "Societal Presentation" },
+//         { time: "2:00-4:45", subject: "Internship Presentation (RK)" },
+//     ],
+//     day5: [
+//         { time: "9:00-9:55", subject: "22MCA32 - Internet of Things (RM)" },
+//         { time: "9:55-10:50", subject: "22MCA31 - Data Analytics Using Python (RK)" },
+//         { time: "11:10-1:00", subject: "Placement Lab (NH + AB)" },
+//         { time: "2:00-4:45", subject: "Project Lab (JK + PL + NH + AB)" },
+//     ],
+//     day6: [
+//         { time: "9:00-9:55", subject: "22MCA335 - NoSQL (NH)" },
+//         { time: "9:55-10:50", subject: "22MCA31 - Data Analytics Using Python (RK)" },
+//         { time: "11:10-1:00", subject: "Mini Project (RK + AK) (RM + AB)" },
+//         { time: "2:00-4:45", subject: "Association Activity" },
+//     ],
+// };
 
 const datesToDaysMapping = {
-    day1: ["26-03-2025", "03-04-2025", "12-04-2025", "23-04-2025", "29-04-2025", "10-05-2025"],
-    day2: ["27-03-2025", "04-04-2025", "15-04-2025", "24-04-2025", "05-05-2025", "12-05-2025"],
-    day3: ["28-03-2025", "07-04-2025", "16-04-2025", "25-04-2025", "06-05-2025", "13-05-2025"],
-    day4: ["29-03-2025", "08-04-2025", "17-04-2025", "26-04-2025", "07-05-2025", "14-05-2025"],
-    day5: ["01-04-2025", "09-04-2025", "21-04-2025", "27-04-2025", "08-05-2025", "15-05-2025"],
-    day6: ["02-04-2025", "11-04-2025", "22-04-2025", "28-04-2025", "09-05-2025", "16-05-2025"],
+    day1: ["10-06-2025", "17-06-2025", "25-06-2025",],
+    day2: ["11-06-2025", "18-06-2025", "26-06-2025",],
+    day3: ["12-06-2025", "19-06-2025", "27-06-2025",],
+    day4: ["13-06-2025", "20-06-2025", "28-06-2025",],
+    day5: ["14-06-2025", "23-06-2025", "30-06-2025",],
+    day6: ["16-06-2025", "24-06-2025", "01-07-2025",],
 };
 
 const holidays = {
-    "30-04-2025": "Holiday",
-    "01-05-2025": "Holiday",
-    "02-05-2025": "Holiday",
     // Add when Necessary
 };
 const specialEvents = {
@@ -271,7 +268,8 @@ function displayTimetable(date) {
 
     timeDay.style.display = 'block';
     const dayKey = getDayFromDate(date);
-    const timetable = selectedSemester === 'firstSem' ? subjectsPerDayFirstSem[dayKey] : subjectsPerDayThirdSem[dayKey];
+    // const timetable = selectedSemester === 'firstSem' ? subjectsPerDayFirstSem[dayKey] : subjectsPerDayFirstSem[dayKey];
+    const timetable = subjectsPerDayFirstSem[dayKey];
     timeTableDay.innerText = dayKey ? `Time Table: ${dayKey}` : "";
     timetableContainer.innerHTML = "";
 
